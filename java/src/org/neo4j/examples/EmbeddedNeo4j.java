@@ -119,6 +119,7 @@ public class EmbeddedNeo4j
             // END SNIPPET: removingData
 
             tx.success();
+
         }
         catch (Exception e) {
             System.err.println("e");
@@ -153,6 +154,7 @@ public class EmbeddedNeo4j
                 graphDb.shutdown();
             }
         } );
+
     }
     // END SNIPPET: shutdownHook
 }

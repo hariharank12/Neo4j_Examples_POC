@@ -8,9 +8,17 @@ import org.neo4j.graphdb._
 import org.neo4j.kernel._
 import org.neo4j.index._
 import org.neo4j.index.lucene._
+import scala.Enumeration
+
+
 
 object RelTypes extends Enumeration {
-  type RelTypes = Value
+  // refers to line no 183
+  // @SerialVersionUID(7091335633555234129L)
+  // abstract class Value extends Ordered[Value] with Serializable {
+    type RelTypes = Value
+  // refers to line no 131,
+  // protected final def Value: Value = Value(nextId) in scala.Enumeration.scala
   val USERS_REFERENCE, USER = Value
 
   implicit def conv(rt: RelTypes) = new RelationshipType() {def name = rt.toString}
